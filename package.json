@@ -1,0 +1,16 @@
+{
+  "name": "word-shuffler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": { 
+    "dev": "parcel index.html"
+  },
+  "author": "Aaron Meder",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.24.4"
+  }
+}
