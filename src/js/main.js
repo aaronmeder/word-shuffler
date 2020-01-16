@@ -34,6 +34,10 @@ function startNewRound () {
   window.wordToSolve = words[Math.floor(Math.random()*words.length)]; 
   wordElement.innerHTML = window.wordToSolve.shuffle();
 
+  // reset status
+  statusElement.innerHTML = "Guess the word";
+  answerElement.value = "";
+
   // start timer
   startTimer();
 
@@ -75,11 +79,17 @@ function solved(event) {
 
   if( answerElement.value === window.wordToSolve ) {
     
-    statusElement.innerHTML = "Yay 🎉";
+    statusElement.innerHTML = "Correct 🎉";
+    statusElement.innerHTML += "<br />Starting next round...";
+
+    setTimeout( startNewRound(), 2000);
 
   } else {
     
-    statusElement.innerHTML = "Wrong 😢";
+    statusElement.innerHTML = "Oops wrong word 🤷🏻‍♂️";
+    statusElement.innerHTML += "<br />Starting next round...";
+
+    setTimeout( startNewRound(), 2000);
 
   }
 
