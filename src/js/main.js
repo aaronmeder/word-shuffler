@@ -14,11 +14,15 @@ String.prototype.shuffle = function () {
   return a.join("");
 }
 
-// Initialize DOM elements
+// Initialize 
 // -----------------------
+
+// set starting values
+window.userCurrentScore = 0;
 
 // get DOM elements
 const statusElement = document.querySelector("#status");
+const scoreELement = document.querySelector("#current-score");
 const wordElement = document.querySelector('#word');
 const answerElement = document.querySelector("#answer");
 const submitElement = document.querySelector("#submit");
@@ -39,36 +43,41 @@ function startNewRound () {
   answerElement.value = "";
 
   // start timer
+  clearTimer();
   startTimer();
 
 }
 
 function startTimer () {
 
-  let timer = {};
+  window.timer = {};
 
-  timer.end = 15;
+  window.timer.end = 15;
   const timerElement = document.querySelector("#timer");
-  timerElement.innerHTML = timer.end;
+  timerElement.innerHTML = window.timer.end;
 
-  if ( timer.end > 0 ) {
+  if ( window.timer.end > 0 ) {
     
-    timer.ticker = setInterval( function () {
+    window.timer.ticker = setInterval( function () {
 
       // stop if passed end
-      timer.end--;
-      if ( timer.end <= 0 ) {
-        clearInterval( timer.ticker );
-        timer.end = 0;
+      window.timer.end--;
+      if ( window.timer.end <= 0 ) {
+        clearInterval( window.timer.ticker );
+        window.timer.end = 0;
       }
 
       // update time
-      timerElement.innerHTML = timer.end;
+      timerElement.innerHTML = window.timer.end;
 
     }, 1000);
 
   }
 
+}
+
+function clearTimer () {
+  clearInterval( window.timer.ticker );
 }
 
 function solved(event) { 
@@ -78,7 +87,13 @@ function solved(event) {
   // check if correct
 
   if( answerElement.value === window.wordToSolve ) {
+
+    // set user score
+    window.userCurrentScore = window.userCurrentScore + 10;
+    scoreELement.innerHTML = window.userCurrentScore;
+
     
+    // update status
     statusElement.innerHTML = "Correct 🎉";
     statusElement.innerHTML += "<br />Starting next round...";
 
