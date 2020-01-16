@@ -1,4 +1,4 @@
-// Functions
+// Helper Functions
 // -----------------------
 
 String.prototype.shuffle = function () {
@@ -14,37 +14,8 @@ String.prototype.shuffle = function () {
   return a.join("");
 }
 
-function solved(event) { 
-
-  event.preventDefault();
-
-  // check if correct
-
-  if( answerElement.value === wordToSolve ) {
-    
-    statusElement.innerHTML = "Yay 🎉";
-
-  } else {
-    
-    statusElement.innerHTML = "Wrong 😢";
-    console.log("answer: ", answerElement.value);
-    console.log("wordToSolve: ", wordToSolve);
-
-  }
-
-}
-
-
-// Word Shuffler 
+// Initialize DOM elements
 // -----------------------
-
-const words = [
-  'house',
-  'animal',
-  'farm',
-  'train',
-  'colorful'
-];
 
 // get DOM elements
 const statusElement = document.querySelector("#status");
@@ -52,13 +23,25 @@ const wordElement = document.querySelector('#word');
 const answerElement = document.querySelector("#answer");
 const submitElement = document.querySelector("#submit");
 
-// pick a random word
-const wordToSolve = words[Math.floor(Math.random()*words.length)]; 
-wordElement.innerHTML = wordToSolve.shuffle();
 
-// start timer
-let timer = {};
-window.addEventListener("load", function () {
+// Game functions
+// -----------------------
+
+// start a new game round
+function startNewRound () {
+
+  // pick a random word
+  window.wordToSolve = words[Math.floor(Math.random()*words.length)]; 
+  wordElement.innerHTML = window.wordToSolve.shuffle();
+
+  // start timer
+  startTimer();
+
+}
+
+function startTimer () {
+
+  let timer = {};
 
   timer.end = 15;
   const timerElement = document.querySelector("#timer");
@@ -81,6 +64,42 @@ window.addEventListener("load", function () {
     }, 1000);
 
   }
+
+}
+
+function solved(event) { 
+
+  event.preventDefault();
+
+  // check if correct
+
+  if( answerElement.value === window.wordToSolve ) {
+    
+    statusElement.innerHTML = "Yay 🎉";
+
+  } else {
+    
+    statusElement.innerHTML = "Wrong 😢";
+
+  }
+
+}
+
+// Word Shuffler 
+// -----------------------
+
+const words = [
+  'house',
+  'animal',
+  'farm',
+  'train',
+  'colorful'
+];
+
+// On Page load
+window.addEventListener("load", function () {
+
+  startNewRound();
 
 });
 
