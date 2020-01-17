@@ -26,6 +26,7 @@ const scoreELement = document.querySelector("#current-score");
 const wordElement = document.querySelector('#word');
 const answerElement = document.querySelector("#answer");
 const submitElement = document.querySelector("#submit");
+const timerElement = document.querySelector("#timer");
 
 
 // Game functions
@@ -51,9 +52,7 @@ function startNewRound () {
 function startTimer () {
 
   window.timer = {};
-
   window.timer.end = 15;
-  const timerElement = document.querySelector("#timer");
   timerElement.innerHTML = window.timer.end;
 
   if ( window.timer.end > 0 ) {
@@ -63,8 +62,7 @@ function startTimer () {
       // stop if passed end
       window.timer.end--;
       if ( window.timer.end <= 0 ) {
-        clearInterval( window.timer.ticker );
-        window.timer.end = 0;
+        startNewRound();
       }
 
       // update time
@@ -77,12 +75,17 @@ function startTimer () {
 }
 
 function clearTimer () {
+
   clearInterval( window.timer.ticker );
+  window.timer.end = 0;
+  timerElement.innerHTML = "";
+
 }
 
-function solved(event) { 
+function solved(event) {
 
   event.preventDefault();
+  clearTimer();
 
   // check if correct
 
@@ -91,20 +94,19 @@ function solved(event) {
     // set user score
     window.userCurrentScore = window.userCurrentScore + 10;
     scoreELement.innerHTML = window.userCurrentScore;
-
     
     // update status
     statusElement.innerHTML = "Correct 🎉";
     statusElement.innerHTML += "<br />Starting next round...";
 
-    setTimeout( startNewRound(), 2000);
+    setTimeout( startNewRound, 2000 );
 
   } else {
     
     statusElement.innerHTML = "Oops wrong word 🤷🏻‍♂️";
     statusElement.innerHTML += "<br />Starting next round...";
 
-    setTimeout( startNewRound(), 2000);
+    setTimeout( startNewRound, 2000 );
 
   }
 
