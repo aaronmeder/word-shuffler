@@ -6,37 +6,38 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Word Shuffler</title>
   <script src="src/js/main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="src/scss/main.scss" />
 </head>
 <body>
+
+  <div class="app-container">
   
+    <header class="app-header">
+      <h1 class="logo">Word Shuffler</h1>
+      <div id="timer" class="timer"></div>
+      <div id="current-score" class="current-score">0</div>
+    </header>
 
-  <header>
-    <h1>Word Shuffler</h1>
+    <main class="app-main">
 
-    <div id="timer" class="timer"></div>
-    <div id="current-score" class="current-score">0</div>
-  </header>
+      <div id="status" class="status">Loading Game...</div>
 
-  <main>
+      <div id="word" class="word"></div>
 
-    <div id="status" class="status">Starting Game...</div>
+      <div class="answer__wrapper">
+        <form>
+          <label for="answer">
+            Your guess:
+          </label>
+          <input id="answer" type="text" />
+          <input id="submit" type="submit" value="solved!" />
+          <!-- <input id="submit" type="submit" value="gelöst!" /> -->
+        </form>
+      </div>
 
-    <div id="word" class="word"></div>
+    </main>
 
-    <div class="answer__wrapper">
-      <form>
-        <label for="answer">
-          Your guess:
-        </label>
-        <input id="answer" type="text" />
-        <input id="submit" type="submit" value="solved!" />
-        <!-- <input id="submit" type="submit" value="gelöst!" /> -->
-      </form>
-    </div>
+  </div>
 
-  </main>
-
-  
-  
 </body>
 </html>

@@ -1,0 +1,37 @@
+/*
+-------------------------
+Layout
+-------------------------
+*/
+
+.app-container {
+  display: grid;
+  grid-template-columns: 25px 25px 1fr 25px 25px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "score score logo timer timer"
+    ". main main main ."
+}
+
+// header
+
+.current-score {
+  grid-area: score;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.timer {
+  grid-area: timer;
+}
+
+// main content
+
+.app-main {
+  grid-area: main;
+}
+
+/* Subtitle
+------------- */
