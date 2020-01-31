@@ -1,3 +1,3 @@
 # Todos
 
-* Restart game if not resolved
+x Restart game if not resolved
