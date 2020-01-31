@@ -4,6 +4,8 @@ Layout
 -------------------------
 */
 
+
+
 .app-container {
   display: grid;
   grid-template-columns: 25px 25px 1fr 25px 25px;
@@ -14,6 +16,10 @@ Layout
 }
 
 // header
+
+.app-header {
+  display: contents;
+}
 
 .current-score {
   grid-area: score;
