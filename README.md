@@ -19,7 +19,12 @@ Uses modern technologies such as CSS Grid with no fallbacks. Meant to stay super
 
 ## Roadmap
 
-See TODO.md for hints.
+- [] Optimise UI
+- [] Add focus to input field
+- [] Add a better word database
+- [x] Add a nice UI
+- [x] Restart game if not solved
+
 
 ## Starware
 
