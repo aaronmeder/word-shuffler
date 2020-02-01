@@ -78,7 +78,7 @@ function clearTimer () {
 
   clearInterval( window.timer.ticker );
   window.timer.end = 0;
-  timerElement.innerHTML = "";
+  timerElement.innerHTML = window.timer.end;
 
 }
 
@@ -96,15 +96,15 @@ function solved(event) {
     scoreELement.innerHTML = window.userCurrentScore;
     
     // update status
-    statusElement.innerHTML = "Correct 🎉";
-    statusElement.innerHTML += "<br />Starting next round...";
+    statusElement.innerHTML = "Correct 🎉 ";
+    statusElement.innerHTML += "Starting next round...";
 
     setTimeout( startNewRound, 2000 );
 
   } else {
     
-    statusElement.innerHTML = "Oops wrong word 🤷🏻‍♂️";
-    statusElement.innerHTML += "<br />Starting next round...";
+    statusElement.innerHTML = "Oops wrong word 🤷🏻‍♂️ ";
+    statusElement.innerHTML += "Starting next round...";
 
     setTimeout( startNewRound, 2000 );
 
