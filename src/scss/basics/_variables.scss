@@ -4,5 +4,69 @@ Variables
 -------------------------
 */
 
-/* Subtitle
+
+/* Fonts
 ------------- */
+
+$main-font: Rubik, sans-serif;
+$mono-font: 'Space Mono', Arial, sans-serif;
+
+
+/* Colors
+------------- */
+
+$main-brand-color: #8245BF;
+$secondary-brand-color:  #6F04D9;
+$secondary-brand-color--darker: #542980;
+$main-accent-color: #05F29B;
+$secondary-accent-color:#F2CB05;
+
+
+/* Sizing Units
+------------- */
+
+$sizing-xs: 0.25rem;
+$sizing-sm: 0.5rem;
+$sizing-md: 1.25rem;
+$sizing-lg: 2.5rem;
+$sizing-xl: 5rem;
+
+$sizing-mobile-padding: #{$sizing-md};
+
+/* Screen Sizes
+------------- */
+
+$container-width: 680px;
+$container-width-wide: 1200px;
+
+$size-sm: 600px;
+$size-md: 800px;
+$size-lg: 980px;
+$size-xl: 1400px;
+
+/* Breakpoints
+------------- */
+
+@mixin small {
+  @media (min-width: 0) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$size-sm + 1px}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$size-lg + 1px}) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: #{$size-xl + 1px}) {
+    @content;
+  }
+}

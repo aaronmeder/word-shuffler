@@ -4,15 +4,15 @@ Layout
 -------------------------
 */
 
-
-
 .app-container {
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-columns: 25px 25px 1fr 25px 25px;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "score score logo timer timer"
-    ". main main main ."
+    ". main main main .";
 }
 
 // header

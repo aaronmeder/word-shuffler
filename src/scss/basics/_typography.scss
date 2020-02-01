@@ -4,5 +4,63 @@ Typography
 -------------------------
 */
 
-/* Subtitle
-------------- */
+
+/* 
+Load Fonts
+-----------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400i,700i&display=swap');
+
+/* 
+Basics
+-----------
+*/
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: $main-font;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: white;
+}
+
+
+// headings
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $mono-font;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin: $sizing-md  0;
+  
+}
+
+h2 {
+  margin: $sizing-md 0 ($sizing-md / 2) 0;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+h3 {
+  margin: $sizing-sm 0 ($sizing-sm / 2) 0;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+}
+
+// links
+
+a:link,
+a:visited {
+  color: $main-accent-color;
+}

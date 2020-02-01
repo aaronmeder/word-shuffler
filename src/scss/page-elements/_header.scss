@@ -1,0 +1,41 @@
+/*
+-------------------------
+Header
+-------------------------
+*/
+
+.logo {
+  text-align: center;
+  color: $secondary-accent-color;
+}
+
+.current-score {
+  font-family: $mono-font;
+  font-weight: bold;
+  font-size: 1.5rem;
+  place-self: center;
+  text-align: center;
+
+  &::before {
+    margin-bottom: 0.5rem;
+    display: block;
+    content: "🏆";
+  }
+}
+
+.timer {
+  font-family: $mono-font;
+  font-weight: bold;
+  font-size: 1.5rem;
+  place-self: center;
+  text-align: center;
+
+  &::before {
+    margin-bottom: 0.5rem;
+    display: block;
+    content: "⏱️";
+  }
+}
+
+/* Subtitle
+------------- */

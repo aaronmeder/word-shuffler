@@ -37,10 +37,10 @@ function startNewRound () {
 
   // pick a random word
   window.wordToSolve = words[Math.floor(Math.random()*words.length)]; 
-  wordElement.innerHTML = window.wordToSolve.shuffle();
+  wordElement.innerHTML = window.wordToSolve.shuffle().toLowerCase();
 
   // reset status
-  statusElement.innerHTML = "Guess the word";
+  statusElement.innerHTML = "Guess the word:";
   answerElement.value = "";
 
   // start timer
@@ -89,7 +89,7 @@ function solved(event) {
 
   // check if correct
 
-  if( answerElement.value === window.wordToSolve ) {
+  if( answerElement.value.toLowerCase() === window.wordToSolve ) {
 
     // set user score
     window.userCurrentScore = window.userCurrentScore + 10;

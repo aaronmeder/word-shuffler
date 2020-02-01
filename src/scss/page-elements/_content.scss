@@ -1,0 +1,51 @@
+/*
+-------------------------
+Content
+-------------------------
+*/
+
+body {
+  background-color: $main-brand-color;
+  background: linear-gradient(180deg, $secondary-brand-color--darker 0, $secondary-brand-color 200px, $main-brand-color 100%); 
+}
+
+.app-main {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.status {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.word {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+}
+
+.answer {
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__input {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Subtitle
+------------- */
