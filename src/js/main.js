@@ -14,6 +14,15 @@ String.prototype.shuffle = function () {
   return a.join("");
 }
 
+
+// Dragging
+// ---
+
+function dragCharacterStart ( event ) {
+  console.log("event");
+}
+
+
 // Initialize 
 // -----------------------
 
@@ -37,7 +46,20 @@ function startNewRound () {
 
   // pick a random word
   window.wordToSolve = words[Math.floor(Math.random()*words.length)]; 
-  wordElement.innerHTML = window.wordToSolve.shuffle().toLowerCase();
+  //wordElement.innerHTML = window.wordToSolve.shuffle().toLowerCase();
+
+  // slice word into characters
+  [...window.wordToSolve.shuffle().toLowerCase()].forEach( function(character) {
+
+    // display characters
+    let html = `<span class="character" draggable="true" ondragstart="dragCharacterStart(event)">${character}</span>`
+    wordElement.insertAdjacentHTML('beforeend', html)
+
+  });
+
+  // make draggable
+
+  
 
   // reset status
   statusElement.innerHTML = "Guess the word:";
